@@ -37,6 +37,64 @@ main h1 {
 main h2 {
     font-size: 2.5rem;
     padding: 1rem;
+    text-indent: 2rem;
+    padding: 2rem;
+}
+
+main p {
+    font-size: 2rem;
+}
+
+/* From uiverse.io by @Voxybuns */
+button {
+    /* Variables */
+   --button_radius: 0.75em;
+   --button_color: #9effff;
+   --button_outline_color: #645959;
+   font-size: 17px;
+   font-weight: bold;
+   border: none;
+   border-radius: var(--button_radius);
+   background: var(--button_outline_color);
+  }
+  
+  .btn-v3d {
+   display: block;
+   box-sizing: border-box;
+   border: 2px solid var(--button_outline_color);
+   border-radius: var(--button_radius);
+   padding: 0.75em 1.5em;
+   background: var(--button_color);
+   color: var(--button_outline_color);
+   transform: translateY(-0.2em);
+   transition: transform 0.1s ease;
+  }
+  
+  button:hover .btn-v3d {
+    /* Pull the button upwards when hovered */
+   transform: translateY(-0.33em);
+  }
+  
+  button:active .btn-v3d {
+    /* Push the button downwards when pressed */
+   transform: translateY(0);
+  }
+
+.lig-elementos {
+    border: 1px solid #999999;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    float: left;
+}
+
+.propriedades-elementos {
+    padding: 2rem;
+    margin: 1rem;
+    text-indent:3rem ;
+}
+
+.prop {
+    margin-top: 1.5rem;
 }
 
 .content-box {

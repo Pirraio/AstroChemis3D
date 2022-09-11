@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemis3D - Gás Oxigênio</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <a href="../index.html"><img src="../img/chemis3d.png" alt="Imagem com Logo Chemis3D" id="logo_chemis3d"></a>
+    </nav>
+    <main>
+        <div class="content-box">
+            <h2>Gás Oxigênio - O2</h2>
+            <div class="info-elementos">
+            <img src="../img/lig_o2.png" alt="Ligação O2" class="lig-elementos">
+            <div class="propriedades-elementos">
+                <p>O gás oxigênio constitui 20,8% da atmosfera. Ele é fundamental para existência da vida por causa da respiração e por compor moléculas importantes. É um gás inodor e incolor</p>
+                <div class="prop">
+                    <p>Fórmula Molecular: O2</p>
+                    <p>Estado de matéria: Gasoso</p>
+                    <p>Ponto de Fusão: -218,4 °C</p>
+                    <p>Ponto de Ebuliçao: -182,8 °C</p>
+                </div>
+            </div>
+            <button id="btn-o2">
+                <span class="btn-v3d">
+                    Visualização 3D
+                </span>
+            </button>
+            </div>
+        </div>
+    </main>
+
+    
+
+    <script>
+        document.getElementById("btn-o2").onclick = function () {
+            location.href = "threejs_pages/o2_3D.html";
+        };
+    </script>
+
+</body>
+</html>
