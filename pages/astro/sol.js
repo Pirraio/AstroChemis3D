@@ -33,18 +33,18 @@ scene.add(ambientLight)
 
 const skybox = new THREE.CubeTextureLoader();
   const space = skybox.load([
-    'img/skybox/px.png',
-    'img/skybox/nx.png',
-    'img/skybox/py.png',
-    'img/skybox/ny.png',
-    'img/skybox/pz.png',
-    'img/skybox/nz.png'
+    '../../img/skybox/px.png',
+    '../../img/skybox/nx.png',
+    '../../img/skybox/py.png',
+    '../../img/skybox/ny.png',
+    '../../img/skybox/pz.png',
+    '../../img/skybox/nz.png'
   ]);
   scene.background = space;
 
 //Definindo Objetos
 const textureLoader = new THREE.TextureLoader();
-const solTexture = textureLoader.load( "2k_sun.jpg" );
+const solTexture = textureLoader.load( "../../img/2k_sun.jpg" );
 const raio = 1
 const segmentosX = 32
 const segmentosY = 32

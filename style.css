@@ -53,6 +53,10 @@ main p {
     font-size: 2rem;
 }
 
+a {
+ font-size: 3rem;
+}
+
 /* From uiverse.io by @Voxybuns */
 button {
     /* Variables */
