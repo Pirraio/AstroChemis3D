@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemis3D - Hélio</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <a href="../index.html"><img src="../img/chemis3d.png" alt="Imagem com Logo Chemis3D" id="logo_chemis3d"></a>
+    </nav>
+    <main>
+        <div class="content-box">
+            <h2>Hélio - He</h2>
+            <div class="info-elementos">
+            <!-- <img src="../img/lig_ch4.png" alt="Ligação CH4" class="lig-elementos"> -->
+            <div class="propriedades-elementos">
+                <p>*descrição metano*</p>
+                <div class="prop">
+                    <p>Fórmula Molecular: He</p>
+                    <p>Estado de matéria: ?</p>
+                    <p>Ponto de Fusão: ? °C</p>
+                    <p>Ponto de Ebuliçao: ? °C</p>
+                </div>
+            </div>
+            <button id="btn-o2">
+                <span class="btn-v3d">
+                    Visualização 3D
+                </span>
+            </button>
+            </div>
+        </div>
+    </main>
+
+    
+
+    <script>
+        document.getElementById("btn-o2").onclick = function () {
+            location.href = "threejs_pages/he_3D.html";
+        };
+    </script>
+
+</body>
+</html>

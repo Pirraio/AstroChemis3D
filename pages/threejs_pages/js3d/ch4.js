@@ -27,6 +27,7 @@ scene.add(pointLight, ambientLight)
 const carbonoGeometria = new THREE.SphereGeometry(2, 32, 32);
 const carbonoMaterial = new THREE.MeshStandardMaterial({color: 0xff0000})
 const carbono = new THREE.Mesh(carbonoGeometria, carbonoMaterial)
+// carbono.position.set(1,1,1)
 scene.add(carbono)
 const hidrogenioGeometria = new THREE.SphereGeometry(1.5, 32, 32);
 const hidrogenioMaterial = new THREE.MeshStandardMaterial({color: 0x00aaff})

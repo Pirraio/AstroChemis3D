@@ -16,21 +16,28 @@ document.body.appendChild(renderer.domElement);
 const controls = new OrbitControls(camera, renderer.domElement);
 
 //Definindo Luzes 
-const pointLight = new THREE.PointLight(0xffffff, .7)
-const ambientLight = new THREE.AmbientLight(0xffffff, .3)
-pointLight.position.set(5, 5, 5)
+const pointLight = new THREE.DirectionalLight(0xffffff, .8)
+const ambientLight = new THREE.AmbientLight(0xffffff, .5)
+ pointLight.position.set(5, 5, 4)
 scene.add(pointLight, ambientLight)
 
-//Definindo Objetos 
-const oxigenioGeometria = new THREE.SphereGeometry(2, 32, 32);
-const oxigenioMaterial = new THREE.MeshStandardMaterial({color: 0xff0000})
-const oxigenio1 = new THREE.Mesh(oxigenioGeometria, oxigenioMaterial)
-const oxigenio2 = new THREE.Mesh(oxigenioGeometria, oxigenioMaterial)
+//Definindo Objetos
+const raio = 1
+const segmentosX = 32
+const segmentosY = 32
+const atomoGeometria = new THREE.SphereGeometry(raio, segmentosX, segmentosY);
+const oxigenioMaterial = new THREE.MeshPhongMaterial({
+	color: 0xff0000
+})
+const oxigenio1 = new THREE.Mesh(atomoGeometria, oxigenioMaterial)
+const oxigenio2 = new THREE.Mesh(atomoGeometria, oxigenioMaterial)
+oxigenio1.scale.set(2, 2, 2)
+oxigenio2.scale.set(2, 2, 2)
 scene.add(oxigenio1, oxigenio2)
 oxigenio1.position.set(3, 0, 0)
 oxigenio2.position.set(-3, 0, 0)
 const ligacaoGeometria = new THREE.CylinderGeometry( .5, .5, 5, 32 );
-const ligacaoMaterial = new THREE.MeshStandardMaterial( {color: 0xffffff} );
+const ligacaoMaterial = new THREE.MeshPhongMaterial( {color: 0xffffff} );
 const ligacao1 = new THREE.Mesh(ligacaoGeometria, ligacaoMaterial);
 const ligacao2 = new THREE.Mesh(ligacaoGeometria, ligacaoMaterial);
 ligacao1.rotateZ(3.14/2) 

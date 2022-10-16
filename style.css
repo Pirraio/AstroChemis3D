@@ -19,6 +19,13 @@ body {
     width: 42rem;
 }
 
+canvas {
+    position: static;
+    top: 0;
+    left: 0;
+    outline: none;
+}
+
 nav {
     padding-bottom: 5rem;
     border-bottom: 1px solid #999999;
@@ -42,6 +49,7 @@ main h2 {
 }
 
 main p {
+    text-indent: 3rem;
     font-size: 2rem;
 }
 
@@ -99,7 +107,7 @@ button {
 
 .content-box {
     width: 80%;
-    padding-bottom: 50rem;
+    padding-bottom: 15rem;
     border: 1px solid #999999;
     margin: auto;
     background-color: aliceblue;
