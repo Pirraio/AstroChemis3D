@@ -9,9 +9,7 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
 camera.position.z = 3;
 
 const canvas = document.querySelector("canvas.webgl")
-const renderer = new THREE.WebGLRenderer({
-    canvas: canvas
-})
+const renderer = new THREE.WebGLRenderer()
 
 const sizes = {
     width: window.innerWidth,
@@ -26,7 +24,7 @@ document.body.appendChild(renderer.domElement);
 const controls = new OrbitControls(camera, renderer.domElement);
 
 //Definindo Luzes 
-// const pointLight = new THREE.DirectionalLight(0xffffff, .8)
+//  const pointLight = new THREE.DirectionalLight(0x00ff00 , 10)
 const ambientLight = new THREE.AmbientLight(0xffffff, 1)
 //  pointLight.position.set(5, 5, 4)
 scene.add(ambientLight)
@@ -46,12 +44,11 @@ const skybox = new THREE.CubeTextureLoader();
 const textureLoader = new THREE.TextureLoader();
 const solTexture = textureLoader.load( "../../img/2k_sun.jpg" );
 const raio = 1
-const segmentosX = 32
+const segmentosX = 32 
 const segmentosY = 32
 const planetaGeometria = new THREE.SphereGeometry(raio, segmentosX, segmentosY);
 const solMaterial = new THREE.MeshStandardMaterial({map: solTexture})
 const sol = new THREE.Mesh(planetaGeometria, solMaterial)
-
 scene.add(sol)
 
 

@@ -12,11 +12,14 @@
 </head>
 <body>
     <nav>
-        <a href="../index.html"><img src="../img/chemis3d.png" alt="Imagem com Logo Chemis3D" id="logo_chemis3d"></a>
+        <a href="../index.html"><img src="../img/copy_astrochemis3d.svg" alt="Imagem com Logo Chemis3D" id="logo_chemis3d"></a>
     </nav>
     <main>
         <div class="content-box">
             <h2>Gás Oxigênio - O2</h2>
+            <canvas id="o2">
+
+            </canvas>
             <div class="info-elementos">
             <img src="../img/lig_o2.png" alt="Ligação O2" class="lig-elementos">
             <div class="propriedades-elementos">
@@ -26,13 +29,14 @@
                     <p>Estado de matéria: Gasoso</p>
                     <p>Ponto de Fusão: -218,4 °C</p>
                     <p>Ponto de Ebuliçao: -182,8 °C</p>
+                    <p>Tipo de Geometria: Linear</p>
                 </div>
             </div>
-            <button id="btn-o2">
+            <!-- <button id="btn-o2">
                 <span class="btn-v3d">
                     Visualização 3D
                 </span>
-            </button>
+            </button> -->
             </div>
         </div>
     </main>
@@ -44,6 +48,15 @@
             location.href = "threejs_pages/o2_3D.html";
         };
     </script>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.138.0/build/three.module.js",
+                "OrbitControls": "https://unpkg.com/three@0.138.0/examples/jsm/controls/OrbitControls.js"
+            }
+        }
+    </script>
+	<script type="module" src="threejs_pages/js3d/o2.js"></script>
 
 </body>
 </html>

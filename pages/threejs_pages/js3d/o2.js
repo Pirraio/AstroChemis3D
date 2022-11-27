@@ -5,18 +5,23 @@ import {OrbitControls} from 'OrbitControls'
 //Inicializando a Cena, Câmera e o Renderer
 const scene = new THREE.Scene();
 
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight , 0.1, 1000);
 camera.position.z = 10;
 
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
+const canvas = document.querySelector('#o2');
+const renderer = new THREE.WebGLRenderer({canvas});
+const sizes = {
+    width: window.innerWidth/2,
+    height: window.innerHeight/2
+}
+
+renderer.setSize(sizes.width, sizes.height)
 
 //Controle de Câmera
 const controls = new OrbitControls(camera, renderer.domElement);
 
 //Definindo Luzes 
-const pointLight = new THREE.DirectionalLight(0xffffff, .8)
+const pointLight = new THREE.DirectionalLight(0xffffff, .6)
 const ambientLight = new THREE.AmbientLight(0xffffff, .5)
  pointLight.position.set(5, 5, 4)
 scene.add(pointLight, ambientLight)

@@ -12,16 +12,17 @@
 </head>
 <body>
     <nav>
-        <a href="#"><img src="../../img/chemis3d.png" alt="Imagem com Logo Chemis3D" id="logo_chemis3d"></a>
+        <a href="#"><img src="../../img/copy_astrochemis3d.svg" alt="Imagem com Logo Chemis3D" id="logo_chemis3d"></a>
     </nav>
-    <canvas class="webgl"></canvas>
+    
     <main>
         <div class="content-box">
+            <canvas class="webgl"></canvas>
             <h1>Informações</h1>
             <h2>Terra</h2>
-            <p>Terra é um planeta cheio de água.</p>
+            <p>O planeta Terra é onde nós habitamos. É o único planeta que conhecemos que possui seres vivos. Tem um raio de aproximadamente 6000km e possui 1 Lua.</p>
         <h2>Elementos Químicos</h2>
-        <p>Sua atmosfera é composta pelos seguintes elementos químicos: </p>
+        <p>Os elementos em maior quantidade na atmosfera e na superfície: </p>
             <div class="elements-box">
                 <a href="../o2.html">
                     <div class="box-wrapper">
@@ -33,6 +34,12 @@
                     <div class="box-wrapper">
                         <img src="../../img/n2.png" alt="Nitrogênio 3D">
                         <p>Gás Nitrogênio - N2</p>
+                    </div>
+                </a>
+                <a href="pages/h2o.html">
+                    <div class="box-wrapper">
+                        <img src="../../img/h2o.png" alt="Água 3D">
+                        <p>Água - H2O</p>
                     </div>
                 </a>
             </div>
@@ -66,13 +73,13 @@ const renderer = new THREE.WebGLRenderer({
 })
 
 const sizes = {
-    width: window.innerWidth,
-    height: window.innerHeight
+    width: window.innerWidth/2,
+    height: window.innerHeight/2
 }
 
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-document.body.appendChild(renderer.domElement);
+// document.body.appendChild(renderer.domElement);
 
 //Controle de Câmera
 const controls = new OrbitControls(camera, renderer.domElement);

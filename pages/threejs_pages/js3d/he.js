@@ -22,12 +22,14 @@ pointLight.position.set(5, 5, 5)
 scene.add(pointLight, ambientLight)
 
 //Definindo objetos
-const helioGeometria = new THREE.SphereGeometry(2, 32, 32);
+const raio = 2
+const segmentosX = 32
+const segmentosY = 32
+const helioGeometria = new THREE.SphereGeometry(raio, segmentosX, segmentosY);
 const helioMaterial = new THREE.MeshStandardMaterial({color: 0x00ff00})
 const helio = new THREE.Mesh(helioGeometria, helioMaterial)
 scene.add(helio)
 
-//ANGULOS SUPOSTAMENTE ERRADOS
 
 
 //Animação (Para cada frame)
