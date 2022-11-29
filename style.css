@@ -1,8 +1,4 @@
-:root {
-    font-size: 62.5%;
-}
-*
-{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,23 +6,9 @@
     
 }
 
+
 body {
     background: #8ab3f0;
-    
-}
-
-#logo_chemis3d {
-    width: 42rem;
-}
-
-
-
-canvas {
-    margin: auto;
-    display: block;
-    width: 100%;
-    height: 100%;
-
 }
 
 nav {
@@ -36,33 +18,123 @@ nav {
     margin-bottom: 2rem;
 }
 
+canvas {
+    margin: auto;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#logo_astrochemis3d {
+    width: 42rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 main h1 {
-    font-size: 3.2rem;
     text-align: center;
     padding: 1rem;
 
 }
 
 main h2 {
-    font-size: 2.5rem;
-    padding: 1rem;
-    text-indent: 2rem;
-    padding: 2rem;
+    text-indent: 1rem;
+    font-size: 26px;
 }
 
 main p {
-    text-indent: 3rem;
-    font-size: 2rem;
+    padding: 1rem;
+    font-size: 20px;
+    
 }
 
-a {
- font-size: 3rem;
+.lig-elementos {
+    border: 1px solid #999999;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    float: left;
 }
 
-/* From uiverse.io by @Voxybuns */
+.propriedades-elementos {
+    padding: 2rem;
+    margin: 1rem;
+    text-indent:3rem ;
+}
+
+.prop {
+    margin-top: 1.5rem;
+}
+
+.content-box {
+    width: 80%;
+    padding-bottom: 1rem;
+    border: 1px solid #999999;
+    margin: auto;
+    background-color: aliceblue;
+    border-radius: .5rem;
+    margin-bottom: 2rem;
+    
+}
+
+.elements-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1vh;
+    padding: 0 1vh;
+    
+}
+
+.box-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 1rem;
+    box-shadow: 5px 5px 5px gray;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 2rem 2rem;
+    
+}
+
+.box-wrapper img {
+    width: 100%;
+    height: 100%;
+    background-color: blueviolet;
+    border-radius: 2rem 2rem 0 0;
+    border: 1px solid gray;
+}
+
+.box-wrapper p {
+    font-size: 1rem;
+    padding: 1rem 0 ;
+    border-radius: 0 0 2rem 2rem;
+}
+
+.elements-box a {
+    text-decoration: none;
+}
+
+.elements-box a:hover {
+    color: red;
+    transform: scale(1.03);
+    transition: transform .1s linear;
+
+}
+
+main a p {
+    padding: 2rem;
+    text-align: center;
+    font-size: 21px;
+}
+
+/* 
 button {
-    /* Variables */
+
    --button_radius: 0.75em;
    --button_color: #9effff;
    --button_outline_color: #645959;
@@ -86,85 +158,9 @@ button {
   }
   
   button:hover .btn-v3d {
-    /* Pull the button upwards when hovered */
    transform: translateY(-0.33em);
   }
   
   button:active .btn-v3d {
-    /* Push the button downwards when pressed */
    transform: translateY(0);
-  }
-
-.lig-elementos {
-    border: 1px solid #999999;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    float: left;
-}
-
-.propriedades-elementos {
-    padding: 2rem;
-    margin: 1rem;
-    text-indent:3rem ;
-}
-
-.prop {
-    margin-top: 1.5rem;
-}
-
-.content-box {
-    width: 80%;
-    padding-bottom: 15rem;
-    border: 1px solid #999999;
-    margin: auto;
-    background-color: aliceblue;
-    border-radius: .5rem;
-    
-    
-}
-
-.elements-box {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 1vh;
-    padding: 0 1vh;
-    
-}
-
-.box-wrapper {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin-top: 1rem;
-    box-shadow: 5px 5px 5px gray;
-    width: 30rem;
-    height: 31rem;
-    border-radius: 2rem 2rem;
-    
-}
-
-.box-wrapper img {
-    width: 100%;
-    height: 100%;
-    background-color: blueviolet;
-    border-radius: 2rem 2rem 0 0;
-    border: 1px solid gray;
-}
-
-.box-wrapper p {
-    font-size: 1.6rem;
-    padding: .8rem 0 ;
-    border-radius: 0 0 2rem 2rem;
-}
-
-.elements-box a {
-    text-decoration: none;
-}
-
-.elements-box a:hover {
-    color: red;
-    transform: scale(1.03);
-    transition: transform .1s linear;
-
-}
+  } */

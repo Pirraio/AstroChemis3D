@@ -1,2 +1,2 @@
 # AstroChemis3D
-Chemis3D is a project that I've been working on for my final project in my school. The goal is to create a catalog of chemical substances with a 3D visualization of them, being able to see the angles and distances of the bonds. 
+AstroChemis3D is a project that I've been working on for my final project in my school. The goal is to create a website that helps to teach about Astronomy and Chemestry, showing planets, stars in 3D as well as chemical substance present in those astros.
