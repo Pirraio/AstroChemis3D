@@ -8,13 +8,18 @@
 
 
 body {
-    background: #8ab3f0;
+    background: #141A26;
+    color: white
+}
+
+a {
+    color: aliceblue;
 }
 
 nav {
     padding: 10px;
-    border-bottom: 1px solid #999999;
-    background-color: aliceblue;
+    border-bottom: 1px solid black;
+    background-color: #5833A6;
     margin-bottom: 2rem;
 }
 
@@ -72,9 +77,9 @@ main p {
 .content-box {
     width: 80%;
     padding-bottom: 1rem;
-    border: 1px solid #999999;
+    border: 1px solid black;
     margin: auto;
-    background-color: aliceblue;
+    background-color: #2E3D59;
     border-radius: .5rem;
     margin-bottom: 2rem;
     
@@ -94,19 +99,20 @@ main p {
     flex-direction: column;
     text-align: center;
     margin-top: 1rem;
-    box-shadow: 5px 5px 5px gray;
+    box-shadow: 5px 5px 5px #141A26;
     width: 20rem;
-    height: 20rem;
+    height: 23rem;
     border-radius: 2rem 2rem;
+    margin-bottom: 2rem;
     
 }
 
-.box-wrapper img {
+.box-wrapper img { 
     width: 100%;
-    height: 100%;
+    height: 100%; 
     background-color: blueviolet;
     border-radius: 2rem 2rem 0 0;
-    border: 1px solid gray;
+    border: 1px solid black;
 }
 
 .box-wrapper p {
@@ -120,8 +126,8 @@ main p {
 }
 
 .elements-box a:hover {
-    color: red;
-    transform: scale(1.03);
+    color: #8979D9;
+    transform: scale(1.02);
     transition: transform .1s linear;
 
 }
