@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <title>AstroChemis3D - Sol</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="../index.html"><img src="../img/astrochemis3d.svg" alt="Logo AstroChemis3D" id="logo_astrochemis3d"></a>
+        </div>
+    </nav>
+    
+    <main>
+        <div class="content-box">
+            <canvas class="webgl"></canvas>
+            <h1>Informações</h1>
+            <h2>Sol</h2>
+            <p>O sol é a estrela do nosso sistema solar. Nela orbitam 8 planetas, incluindo o Planeta Terra. </p>
+        <h2>Elementos Químicos</h2>
+        <p>O sol é composto principalmente pelos seguintes elementos: </p>
+        <div class="elements-box">
+        <a href="../he.html">
+            <div class="box-wrapper">
+                <img src="../../img/he.png" alt="Gás Hélio 3D">
+                <p>Gás Hélio - He</p>
+            </div>
+        </a>
+    <a href="../h2.html">
+        <div class="box-wrapper">
+            <img src="../../img/h2.png" alt="Gás Hidrogênio 3D">
+            <p>Gás Hidrogênio - H2</p>
+        </div>
+    </a>
+        </div>
+    </main>
+    
+    
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.138.0/build/three.module.js",
+                "OrbitControls": "https://unpkg.com/three@0.138.0/examples/jsm/controls/OrbitControls.js"
+            }
+        }
+    </script>
+	<script type="module">
+        import * as THREE from 'three'
+import {OrbitControls} from 'OrbitControls'
+
+
+//Inicializando a Cena, Câmera e o Renderer
+const scene = new THREE.Scene();
+
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+camera.position.z = 3;
+
+const canvas = document.querySelector("canvas.webgl")
+const renderer = new THREE.WebGLRenderer({
+    canvas: canvas
+})
+
+const sizes = {
+    width: window.innerWidth/2,
+    height: window.innerHeight/2
+}
+
+renderer.setSize(sizes.width, sizes.height)
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+// document.body.appendChild(renderer.domElement);
+
+
+//Controle de Câmera
+const controls = new OrbitControls(camera, renderer.domElement);
+
+//Definindo Luzes 
+//  const pointLight = new THREE.DirectionalLight(0x00ff00 , 10)
+const ambientLight = new THREE.AmbientLight(0xffffff, 1)
+//  pointLight.position.set(5, 5, 4)
+scene.add(ambientLight)
+
+const skybox = new THREE.CubeTextureLoader();
+  const space = skybox.load([
+    '../../img/skybox/px.png',
+    '../../img/skybox/nx.png',
+    '../../img/skybox/py.png',
+    '../../img/skybox/ny.png',
+    '../../img/skybox/pz.png',
+    '../../img/skybox/nz.png'
+  ]);
+  scene.background = space;
+
+//Definindo Objetos
+const textureLoader = new THREE.TextureLoader();
+const solTexture = textureLoader.load( "../../img/2k_sun.jpg" );
+const raio = 1
+const segmentosX = 32 
+const segmentosY = 32
+const planetaGeometria = new THREE.SphereGeometry(raio, segmentosX, segmentosY);
+const solMaterial = new THREE.MeshStandardMaterial({map: solTexture})
+const sol = new THREE.Mesh(planetaGeometria, solMaterial)
+scene.add(sol)
+
+
+//Animação (Para cada frame)
+function animate() {
+	requestAnimationFrame(animate);
+	renderer.render(scene, camera);
+}
+animate();
+    </script>
+</body>
+</html>

@@ -6,23 +6,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <title>Sol</title>
+    <title>AstroChemis3D - Terra</title>
 </head>
 <body>
     <nav>
-        <a href="#"><img src="../../img/chemis3d.png" alt="Imagem com Logo Chemis3D" id="logo_chemis3d"></a>
+        <div class="logo">
+            <a href="../index.html"><img src="../img/astrochemis3d.svg" alt="Logo AstroChemis3D" id="logo_astrochemis3d"></a>
+        </div>
     </nav>
-    <canvas class="webgl"></canvas>
+    
     <main>
         <div class="content-box">
+            <canvas class="webgl"></canvas>
             <h1>Informações</h1>
-            <h2>Sol</h2>
-            <p>Marte é uma planeta. Vermelho. É vermelho por causa do óxido de Ferro nele presente.</p>
+            <h2>Terra</h2>
+            <p>O planeta Terra é onde nós habitamos. É o único planeta que conhecemos que possui seres vivos. Tem um raio de aproximadamente 6000km e possui 1 Lua.</p>
         <h2>Elementos Químicos</h2>
-        <p>Marte na atmosfera tem muita coisa.</p>
+        <p>Os elementos em maior quantidade na atmosfera e na superfície: </p>
+            <div class="elements-box">
+                <a href="o2.html">
+                    <div class="box-wrapper">
+                        <img src="../img/o2.png" alt="Oxigênio 3D">
+                        <p>Gás Oxigênio - O2</p>
+                    </div>
+                </a>
+                <a href="n2.html">
+                    <div class="box-wrapper">
+                        <img src="../img/n2.png" alt="Nitrogênio 3D">
+                        <p>Gás Nitrogênio - N2</p>
+                    </div>
+                </a>
+                <a href="h2o.html">
+                    <div class="box-wrapper">
+                        <img src="../img/h2o.png" alt="Água 3D">
+                        <p>Água - H2O</p>
+                    </div>
+                </a>
+            </div>
+   
         </div>
+    </main>
+    
+    
     <script type="importmap">
         {
             "imports": {
@@ -32,7 +59,7 @@
         }
     </script>
 	<script type="module">
-        import * as THREE from 'three'
+import * as THREE from 'three'
 import {OrbitControls} from 'OrbitControls'
 
 
@@ -48,13 +75,13 @@ const renderer = new THREE.WebGLRenderer({
 })
 
 const sizes = {
-    width: window.innerWidth,
-    height: window.innerHeight
+    width: window.innerWidth/2,
+    height: window.innerHeight/2
 }
 
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-document.body.appendChild(renderer.domElement);
+// document.body.appendChild(renderer.domElement);
 
 //Controle de Câmera
 const controls = new OrbitControls(camera, renderer.domElement);
@@ -78,7 +105,7 @@ const skybox = new THREE.CubeTextureLoader();
 
 //Definindo Objetos
 const textureLoader = new THREE.TextureLoader();
-const solTexture = textureLoader.load( "../../img/2k_mars.jpg" );
+const solTexture = textureLoader.load( "../../img/2k_earth_daymap.jpg" );
 const raio = 1
 const segmentosX = 32
 const segmentosY = 32
