@@ -21,7 +21,8 @@ nav {
     padding: 10px;
     border-bottom: 1px solid black;
     background-color: #5833A6;
-    margin-bottom: 2rem;
+    margin-bottom: 1ggrem;
+    display: flex;
 }
 
 canvas {
@@ -36,21 +37,27 @@ canvas {
 .logo {
     display: flex;
     align-items: center;
+    padding-right: 50rem;
     
 }
 
 .navbtn {
+    right: 100em;
     display: flex;
-    position: relative;
-    float: right;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: space-between;
     gap: 3rem;
+    align-items: center;
 }
 
+.navbtn a {
+    padding: 1em;
+    text-decoration: none ;
+}
 
 .navbtn a:hover {
     background-color: #8979D9;
+
 }
 
 main h1 {
