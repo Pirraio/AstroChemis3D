@@ -98,26 +98,26 @@ scene.add(ambientLight)
 
 const skybox = new THREE.CubeTextureLoader();
   const space = skybox.load([
-    '../../img/skybox/px.png',
-    '../../img/skybox/nx.png',
-    '../../img/skybox/py.png',
-    '../../img/skybox/ny.png',
-    '../../img/skybox/pz.png',
-    '../../img/skybox/nz.png'
+    '../img/skybox/px.png',
+    '../img/skybox/nx.png',
+    '../img/skybox/py.png',
+    '../img/skybox/ny.png',
+    '../img/skybox/pz.png',
+    '../img/skybox/nz.png'
   ]);
   scene.background = space;
 
 //Definindo Objetos
 const textureLoader = new THREE.TextureLoader();
-const solTexture = textureLoader.load( "../../img/2k_earth_daymap.jpg" );
+const terraTexture = textureLoader.load( "../img/2k_earth_daymap.jpg" );
 const raio = 1
 const segmentosX = 32
 const segmentosY = 32
 const planetaGeometria = new THREE.SphereGeometry(raio, segmentosX, segmentosY);
-const solMaterial = new THREE.MeshStandardMaterial({map: solTexture})
-const sol = new THREE.Mesh(planetaGeometria, solMaterial)
+const terraMaterial = new THREE.MeshStandardMaterial({map: terraTexture})
+const terra = new THREE.Mesh(planetaGeometria, terraMaterial)
 
-scene.add(sol)
+scene.add(terra)
 
 
 //Animação (Para cada frame)
