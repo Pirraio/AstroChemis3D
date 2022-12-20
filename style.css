@@ -18,10 +18,9 @@ a {
 }
 
 nav {
-    padding: 10px;
     border-bottom: 1px solid black;
     background-color: #5833A6;
-    margin-bottom: 1ggrem;
+    margin-bottom: 1rem;
     display: flex;
 }
 
@@ -42,7 +41,7 @@ canvas {
 }
 
 .navbtn {
-    right: 100em;
+    font-size: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -69,12 +68,11 @@ main h1 {
 
 main h2 {
     text-indent: 1rem;
-    font-size: 26px;
+    font-size: 32px;
 }
 
 main p {
     padding: 1rem;
-    font-size: 20px;
     
 }
 
@@ -107,6 +105,13 @@ main p {
     
 }
 
+.content-box p {
+    font-size: 24px;
+    text-indent: 3rem;
+    text-align: justify;
+    margin: .4em;
+}
+
 .elements-box {
     display: flex;
     flex-wrap: wrap;
@@ -122,8 +127,8 @@ main p {
     text-align: center;
     margin-top: 1rem;
     box-shadow: 5px 5px 5px #141A26;
-    width: 24rem;
-    height: 27rem;
+    width: 20rem;
+    height: 23rem;
     border-radius: 2rem 2rem;
     margin-bottom: 2rem;
     
@@ -137,11 +142,12 @@ main p {
     border: 1px solid black;
 }
 
-.box-wrapper p {
-    font-size: 1rem;
-    padding: 1rem 0 ;
+.box-wrapper span {
+    font-size: 1.5rem;
+    padding: .7rem 0 ;
     border-radius: 0 0 2rem 2rem;
 }
+
 
 .elements-box a {
     text-decoration: none;

@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chemis3D - Gás Oxigênio</title>
+    <title>AstroChemis3D - Gás Oxigênio</title>
     <link rel="stylesheet" href="../style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav>
-        <a href="../index.html"><img src="../img/copy_astrochemis3d.svg" alt="Imagem com Logo Chemis3D" id="logo_chemis3d"></a>
+        <div class="logo">
+            <a href="../index.html"><img src="../img/astrochemis3d.svg" alt="Logo AstroChemis3D" id="logo_astrochemis3d"></a>
+        </div>
+        <div class="navbtn">
+            <a href="../index.html"><p>Home</p></a>
+            <a href="catalog.html"><p>Catálogo Químico</p></a>
+        </div>
     </nav>
     <main>
         <div class="content-box">
-            <h2>Gás Oxigênio - O2</h2>
-            <canvas id="o2">
-
+            <canvas class="webgl">
             </canvas>
+            <h1>Informações</h1>
+            <h2>Gás Oxigênio - O2</h2>
             <div class="info-elementos">
             <img src="../img/lig_o2.png" alt="Ligação O2" class="lig-elementos">
             <div class="propriedades-elementos">
@@ -32,11 +35,6 @@
                     <p>Tipo de Geometria: Linear</p>
                 </div>
             </div>
-            <!-- <button id="btn-o2">
-                <span class="btn-v3d">
-                    Visualização 3D
-                </span>
-            </button> -->
             </div>
         </div>
     </main>

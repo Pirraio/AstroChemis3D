@@ -23,20 +23,20 @@
             <canvas class="webgl"></canvas>
             <h1>Informações</h1>
             <h2>Sol</h2>
-            <p>O sol é a estrela do nosso sistema solar. Nela orbitam 8 planetas, incluindo o Planeta Terra. </p>
+            <p>O sol é a estrela do nosso sistema solar, nela orbitam 8 planetas, incluindo o Planeta Terra. A temperatura da sua superfície é por volta de 5778 K e ao contrário do que se pode pensar, o sol não está em combustão. Na verdade o que ocorre é um reação de fusão nuclear entre moléculas de hidrogênio que formam moléculas de hélio, liberando uma imensa quantidade de energia e isso ocasiona uma variação no campo eletromagnético acarretando em tempestades solares aqui na Terra. Essas tempestades podem chegar a afetar a comunicação sem fio e até mesmo destruir satélites. Também é responsável pela criação da aurora boreal e austral nos polos da Terra.</p>
         <h2>Elementos Químicos</h2>
-        <p>O sol é composto principalmente pelos seguintes elementos: </p>
+        <p>Como já dito, no Sol ocorre a fusão nuclear em que moléculas de hidrogênio se chocam formando hélio, essas subtâncias podem ser visualizadas logo abaixo: </p>
         <div class="elements-box">
         <a href="he.html">
             <div class="box-wrapper">
                 <img src="../img/he.png" alt="Gás Hélio 3D">
-                <p>Gás Hélio - He</p>
+                <span>Gás Hélio - He</span>
             </div>
         </a>
     <a href="h2.html">
         <div class="box-wrapper">
             <img src="../img/h2.png" alt="Gás Hidrogênio 3D">
-            <p>Gás Hidrogênio - H2</p>
+            <span>Gás Hidrogênio - H2</span>
         </div>
     </a>
         </div>
@@ -88,12 +88,12 @@ scene.add(ambientLight)
 
 const skybox = new THREE.CubeTextureLoader();
   const space = skybox.load([
-    '../../img/skybox/px.png',
-    '../../img/skybox/nx.png',
-    '../../img/skybox/py.png',
-    '../../img/skybox/ny.png',
-    '../../img/skybox/pz.png',
-    '../../img/skybox/nz.png'
+    '../img/skybox/px.png',
+    '../img/skybox/nx.png',
+    '../img/skybox/py.png',
+    '../img/skybox/ny.png',
+    '../img/skybox/pz.png',
+    '../img/skybox/nz.png'
   ]);
   scene.background = space;
 

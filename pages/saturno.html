@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
-    <title>AstroChemis3D - Marte</title>
+    <title>AstroChemis3D - Saturno</title>
 </head>
 <body>
     <nav>
@@ -22,10 +22,10 @@
         <div class="content-box">
             <canvas class="webgl"></canvas>
             <h1>Informações</h1>
-            <h2>Marte</h2>
-            <p>Marte é uma planeta. Vermelho. É vermelho por causa do óxido de Ferro nele presente.</p>
+            <h2>Saturno</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae dolore voluptate optio dicta dignissimos atque aperiam voluptates consectetur similique sint accusamus voluptatum, nisi amet, harum doloribus voluptas illum nesciunt distinctio.</p>
         <h2>Elementos Químicos</h2>
-        <p>Marte na atmosfera tem muita coisa.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui sunt perspiciatis recusandae quod nihil sequi, maiores quas? Officiis, vero quam. Molestias fuga maiores dolorem enim impedit assumenda eius exercitationem adipisci?</p>
         </div>
     <script type="importmap">
         {
@@ -44,7 +44,8 @@
         const scene = new THREE.Scene();
 
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        camera.position.z = 3;
+        camera.position.z = 8;
+        camera.position.y = 2;
 
         const canvas = document.querySelector("canvas.webgl")
         const renderer = new THREE.WebGLRenderer({
@@ -82,16 +83,35 @@
         scene.background = space;
 
         //Definindo Objetos
+        
+        
+        
         const textureLoader = new THREE.TextureLoader();
-        const marteTexture = textureLoader.load( "../../img/2k_mars.jpg" );
-        const raio = 1
+        const anelTexture = textureLoader.load('../img/2k_saturn_ring_alpha.png')
+        const anel_geometry = new THREE.RingBufferGeometry( 5, 1, 64);
+        var pos = anel_geometry.attributes.position;
+        var v3 = new THREE.Vector3();
+        for (let i = 0; i < pos.count; i++){
+            v3.fromBufferAttribute(pos, i);
+            anel_geometry.attributes.uv.setXY(i, v3.length() < 4 ? 0 : 1, 1);
+        }
+        const anel_material = new THREE.MeshStandardMaterial({ 
+        map: anelTexture, 
+        side: THREE.DoubleSide,
+        transparent: true
+        });
+        const mesh = new THREE.Mesh(anel_geometry, anel_material );
+        mesh.rotation.set(1.57, 0, 0)
+        scene.add( mesh );
+        const saturnoTexture = textureLoader.load( "../img/2k_saturn.jpg" );
+        const raio = 2
         const segmentosX = 32
         const segmentosY = 32
         const planetaGeometria = new THREE.SphereGeometry(raio, segmentosX, segmentosY);
-        const marteMaterial = new THREE.MeshStandardMaterial({map: marteTexture})
-        const marte = new THREE.Mesh(planetaGeometria, marteMaterial)
+        const saturnoMaterial = new THREE.MeshStandardMaterial({map: saturnoTexture})
+        const saturno = new THREE.Mesh(planetaGeometria, saturnoMaterial)
 
-        scene.add(marte)
+        scene.add(saturno)
 
 
         //Animação (Para cada frame)
