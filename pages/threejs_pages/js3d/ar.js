@@ -30,10 +30,10 @@ scene.add(pointLight, ambientLight)
 const raio = 2
 const segmentosX = 32
 const segmentosY = 32
-const helioGeometria = new THREE.SphereGeometry(raio, segmentosX, segmentosY);
-const helioMaterial = new THREE.MeshPhongMaterial({color: 0xbb3300})
-const helio = new THREE.Mesh(helioGeometria, helioMaterial)
-scene.add(helio)
+const argonioGeometria = new THREE.SphereGeometry(raio, segmentosX, segmentosY);
+const argonioMaterial = new THREE.MeshPhongMaterial({color: 0x740ac4})
+const argonio = new THREE.Mesh(argonioGeometria, argonioMaterial)
+scene.add(argonio)
 
 
 

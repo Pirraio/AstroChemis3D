@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   sodipodi:docname="favicon_astrochemis3d.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="0.80957031"
+     inkscape:cx="331.65742"
+     inkscape:cy="331.03981"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g2033"
+       transform="translate(1.5872511,21.97369)">
+      <rect
+         style="fill:#3dff8b;fill-opacity:1;stroke:#000000;stroke-width:5.15829;stroke-dasharray:none;stroke-opacity:1"
+         id="rect229"
+         width="341.8736"
+         height="341.8736"
+         x="80.161842"
+         y="63.089512" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:354.155px;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2.47001;stroke-dasharray:none;stroke-opacity:1"
+         x="143.67548"
+         y="363.93759"
+         id="text5248"
+         transform="scale(1.0049863,0.99503844)"><tspan
+           sodipodi:role="line"
+           id="tspan5246"
+           x="143.67548"
+           y="363.93759"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#000000;stroke-width:2.47001;stroke-dasharray:none">A</tspan></text>
+      <path
+         id="path9260"
+         style="fill:#00adef;fill-opacity:1;stroke:none;stroke-width:14.2285;stroke-dasharray:none;stroke-opacity:1"
+         d="M 77.489808,292.5026 C 26.26086,310.86073 -0.26926342,328.6201 2.1058146,342.21626 6.7390976,368.82348 123.59567,370.6383 263.10182,346.26971 402.59567,321.9029 494.3603,297.05065 489.71266,270.44841 c -2.15486,-12.38519 7.41211,-11.93076 -34.33889,-13.4326 l -3.05851,1.89653 c 24.15988,1.51217 25.22626,-7.04459 20.17408,-3.888 3.32933,19.04022 -81.66109,45.74942 -196.4461,65.79974 -114.78598,20.05035 -208.298592,19.49087 -213.855622,1.82632 -3.123641,-6.06545 2.271303,-10.74154 15.257394,-18.02968 0.0029,-9.42445 0.09585,-11.57723 0.0448,-12.11812 z"
+         sodipodi:nodetypes="ccsccccsccc" />
+      <circle
+         style="fill:#ff6a00;fill-opacity:1;stroke:#000000;stroke-width:10.0238;stroke-dasharray:none;stroke-opacity:1"
+         id="path10795"
+         cx="460.42047"
+         cy="285.58417"
+         r="41.433971" />
+    </g>
+  </g>
+</svg>

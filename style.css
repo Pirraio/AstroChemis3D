@@ -20,38 +20,37 @@ a {
 nav {
     border-bottom: 1px solid black;
     background-color: #5833A6;
-    margin-bottom: 1rem;
-    display: flex;
-}
-
-canvas {
-    border-radius: .5rem;
-    
+    width: 100%;
+    height: 12vh;
 }
 
 #logo_astrochemis3d {
     width: 42rem;
+    
 }
 
 .logo {
+    position: absolute;
     display: flex;
     align-items: center;
-    padding-right: 50rem;
     
 }
 
 .navbtn {
+    float: right;
     font-size: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 3rem;
     align-items: center;
+    height: 100%;
+    padding-right: 1rem;
 }
 
 .navbtn a {
     padding: 1em;
-    text-decoration: none ;
+    text-decoration: none;
 }
 
 .navbtn a:hover {
@@ -76,26 +75,8 @@ main p {
     
 }
 
-.lig-elementos {
-    border: 1px solid #999999;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    float: left;
-}
-
-.propriedades-elementos {
-    padding: 2rem;
-    margin: 1rem;
-    text-indent:3rem ;
-}
-
-.prop {
-    margin-top: 1.5rem;
-}
-
 .content-box {
     width: 80%;
-    padding-bottom: 1rem;
     border: 1px solid black;
     margin: auto;
     background-color: #2E3D59;
@@ -110,6 +91,29 @@ main p {
     text-indent: 3rem;
     text-align: justify;
     margin: .4em;
+}
+
+.lig-elementos {
+    width: 350px;
+    border: 1px solid #000000;
+    float: right;
+    margin-left: 2rem;
+    margin-right: 2rem ;
+}
+
+.propriedades-elementos {
+    margin: 1rem;
+    text-indent:3rem; 
+    padding-bottom: 10rem;
+}
+
+.dados {
+
+    font-size: 24px;
+}
+
+.dados ul {
+    list-style: none;
 }
 
 .elements-box {
@@ -181,36 +185,3 @@ footer {
     place-items: center;
 
 }
-
-/* 
-button {
-
-   --button_radius: 0.75em;
-   --button_color: #9effff;
-   --button_outline_color: #645959;
-   font-size: 17px;
-   font-weight: bold;
-   border: none;
-   border-radius: var(--button_radius);
-   background: var(--button_outline_color);
-  }
-  
-  .btn-v3d {
-   display: block;
-   box-sizing: border-box;
-   border: 2px solid var(--button_outline_color);
-   border-radius: var(--button_radius);
-   padding: 0.75em 1.5em;
-   background: var(--button_color);
-   color: var(--button_outline_color);
-   transform: translateY(-0.2em);
-   transition: transform 0.1s ease;
-  }
-  
-  button:hover .btn-v3d {
-   transform: translateY(-0.33em);
-  }
-  
-  button:active .btn-v3d {
-   transform: translateY(0);
-  } */
