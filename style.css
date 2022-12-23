@@ -21,7 +21,7 @@ nav {
     border-bottom: 1px solid black;
     background-color: #5833A6;
     width: 100%;
-    height: 12vh;
+    height: 8rem;
 }
 
 #logo_astrochemis3d {
@@ -30,7 +30,7 @@ nav {
 }
 
 .logo {
-    position: absolute;
+    float: left;
     display: flex;
     align-items: center;
     
