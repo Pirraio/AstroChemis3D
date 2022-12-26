@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
     <link rel="shortcut icon" href="../img/favicon_astrochemis3d.svg" type="image/x-icon">
-    <title>AstroChemis3D - Gás Oxigênio</title>
+    <title>AstroChemis3D - Ácido Sufúlrico</title>
 </head>
 <body>
     <nav>
@@ -21,28 +21,25 @@
     <main>
         <div class="content-box">
             <canvas class="webgl"></canvas>
-            <h1>Informações</h1>
-            <h2>Gás Oxigênio - O2</h2>
+            <h2>Ácido Sulfúrico - H2SO4</h2>
+            <img src="../img/lig_h2so4.png" alt="Fórmula Estrutural H2SO4" class="lig-elementos">
             <div class="propriedades-elementos">
-                <img src="../img/lig_o2.png" alt="Fórmula Estrtural O2" class="lig-elementos">
-                <p>O gás oxigênio constitui 21% da atmosfera terrestre. Ele é indispensável para a vida dos seres vivos por fazer parte do processo de respiração e é um gás inodor e incolor.</p>
+                <p>*descrição acido sulfurico*</p>
                 <div class="dados">
                     <ul>
-                        <li>Fórmula Molecular: O2</li>
+                        <li>Fórmula Molecular: H2SO4</li>
                         <li>Estado de matéria: Gasoso</li>
-                        <li>Geometria Molecular: Linear</li>
-                        <li>Número atômico (O): 8</li>
-                        <li>Massa atômica (O): 16u</li>
+                        <li>Geometria Molecular: Tetraédica</li>
                     </ul>
                 </div>
             </div>
-        </div>
+            </div>
     </main>
     <footer> 
         <div id="logo_if">
-            <img src="img/ifrn_logo.png" alt="IFRN Logo" class="footerimg">
+            <img src="../img/ifrn_logo.png" alt="IFRN Logo" class="footerimg">
         </div>
-        <div id="threejs_logo">Visualização 3D feita com: <br><img src="img/threejs_logo.png" alt="ThreeJS Logo" class="footerimg"></div>
+        <div id="threejs_logo">Visualização 3D feita com: <br><img src="../img/threejs_logo.png" alt="ThreeJS Logo" class="footerimg"></div>
     </footer>
     <script type="importmap">
         {
@@ -52,7 +49,6 @@
             }
         }
     </script>
-	<script type="module" src="script/o2.js"></script>
-
+	<script type="module" src="script/h2so4.js"></script>
 </body>
 </html>
