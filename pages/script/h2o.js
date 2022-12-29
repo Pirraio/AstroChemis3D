@@ -31,7 +31,7 @@ const controls = new OrbitControls(camera, renderer.domElement);
 	const oxigenioMaterial = new THREE.MeshStandardMaterial({color: 0x0000ff})
 	const oxigenio = new THREE.Mesh(oxigenioGeometria, oxigenioMaterial)
 	scene.add(oxigenio)
-	const hidrogenioGeometria = new THREE.SphereGeometry(1.76, 32, 32);
+	const hidrogenioGeometria = new THREE.SphereGeometry(1.5, 32, 32);
 	const hidrogenioMaterial = new THREE.MeshStandardMaterial({color: 0xffffff});
 	const hidrogenio1 = new THREE.Mesh(hidrogenioGeometria, hidrogenioMaterial);
 	const hidrogenio2 = new THREE.Mesh(hidrogenioGeometria, hidrogenioMaterial);
