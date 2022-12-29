@@ -24,27 +24,28 @@
             <canvas class="webgl"></canvas>
             <h1>Informações</h1>
             <h2>Netuno</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae dolore voluptate optio dicta dignissimos atque aperiam voluptates consectetur similique sint accusamus voluptatum, nisi amet, harum doloribus voluptas illum nesciunt distinctio.</p>
-            <h2>Principais elementos químicos na atmosfera</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui sunt perspiciatis recusandae quod nihil sequi, maiores quas? Officiis, vero quam. Molestias fuga maiores dolorem enim impedit assumenda eius exercitationem adipisci?</p>
-        <h2>Propriedades</h2>
+            <p>O oitavo e último planeta do sistema solar. Esse gigante gelado é frio, escuro e super distante do Sol, único que não pode ser visto a olho nu. Foi o primeiro planeta descoberto a partir de uma previsão por matemáticos antes de ser realmetne observado, já que foi notado uma variação na orbita de Urano. Suas 14 luas foram nomeadas a partir de deuses e ninfas do oceano da mitologia grega, com a maior delas sendo Tritão. A sonda Voyager 2 analisou Netuno de perto quando passou por ele em direção para fora do sistema solar, em 1989. Assim como os outros gigantes gasosos, também apresenta um sistema de anéis. Por estar mais longe, é o planeta que leva mais tempo para completar uma volta completa no Sol e desde que foi descoberto em 1846, Netuno completou sua volta em 2011.</p>
+            <h2>Propriedades</h2>
         <div class="propriedades-planetas">
             <div class="dados">
                 <ul>
-                    <li>Massa: 0.3302 X 10<sup></sup></li>
-                    <li>Volume: 1.412 X 10<sup></sup></li>
-                    <li>Raio: </li>
-                    <li>Gravidade: </li>
-                    <li>Tempo de Rotação: 59 dias</li>
-                    <li>Período Orbital: 88 dias</li>
+                    <li>Massa: 1,024 x 10<sup>26</sup> kg</li>
+                    <li>Volume: 6,254 x 10<sup>13</sup> km³</li>
+                    <li>Raio: 24.622 km</li>
+                    <li>Gravidade: 11.15 m/s²</li>
+                    <li>Tempo de Rotação: 16 horas</li>
+                    <li>Período Orbital: 165 anos</li>
                     <li>Distância do sol: 30.06UA</li>
-                    <li>Temperatura da superfície: </li>
-                    <li>Luas:</li>
-                    <li>Tipo: </li>
-                    <li>Anéis: </li>
+                    <li>Temperatura da superfície: -245°c</li>
+                    <li>Inclinação Equatorial: 28.3°</li>
+                    <li>Luas: 14</li>
+                    <li>Tipo: Gasoso</li>
+                    <li>Anéis: Sim</li>
                 </ul>
             </div>
         </div>
+            <h2>Principais elementos químicos na atmosfera</h2>
+        <p>Sua atmosfera tem a presença de ventos supersônicos, com velocidades de mais de 2000 km/h. É uma atmosfera espessa muito gelada, apresentando os elementos Hidrogênio, Hélio e Metano.</p>
         <div class="elements-box">
             <a href="he.html">
                 <div class="box-wrapper">
@@ -69,9 +70,9 @@
     </main>
         <footer> 
             <div id="logo_if">
-                <img src="img/ifrn_logo.png" alt="IFRN Logo" class="footerimg">
+                <a href="https://portal.ifrn.edu.br"><img src="../img/ifrn_logo.png" alt="IFRN Logo" class="footerimg"></a>
             </div>
-            <div id="threejs_logo">Visualização 3D feita com: <br><img src="img/threejs_logo.png" alt="ThreeJS Logo" class="footerimg"></div>
+            <div id="threejs_logo">Visualização 3D feita com: <br><a href="https://threejs.org"><img src="../img/threejs_logo.png" alt="ThreeJS Logo" class="footerimg"></a></div>
         </footer>
     <script type="importmap">
         {
@@ -81,71 +82,7 @@
             }
         }
     </script>
-	<script type="module">
-        import * as THREE from 'three'
-        import {OrbitControls} from 'OrbitControls'
-
-
-        //Inicializando a Cena, Câmera e o Renderer
-        const scene = new THREE.Scene();
-
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        camera.position.z = 3;
-
-        const canvas = document.querySelector("canvas.webgl")
-        const renderer = new THREE.WebGLRenderer({
-            canvas: canvas
-        })
-
-        const sizes = {
-            width: window.innerWidth*.8,
-            height: window.innerHeight*.8
-        }
-
-        renderer.setSize(sizes.width, sizes.height)
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-        // document.body.appendChild(renderer.domElement);
-
-
-        //Controle de Câmera
-        const controls = new OrbitControls(camera, renderer.domElement);
-
-        //Definindo Luzes 
-        // const pointLight = new THREE.DirectionalLight(0xffffff, .8)
-        const ambientLight = new THREE.AmbientLight(0xffffff, 1)
-        //  pointLight.position.set(5, 5, 4)
-        scene.add(ambientLight)
-
-        const skybox = new THREE.CubeTextureLoader();
-        const space = skybox.load([
-            '../img/skybox/px.png',
-            '../img/skybox/nx.png',
-            '../img/skybox/py.png',
-            '../img/skybox/ny.png',
-            '../img/skybox/pz.png',
-            '../img/skybox/nz.png'
-        ]);
-        scene.background = space;
-
-        //Definindo Objetos
-        const textureLoader = new THREE.TextureLoader();
-        const netunoTexture = textureLoader.load( "../img/2k_neptune.jpg" );
-        const raio = 1
-        const segmentosX = 32
-        const segmentosY = 32
-        const planetaGeometria = new THREE.SphereGeometry(raio, segmentosX, segmentosY);
-        const netunoMaterial = new THREE.MeshStandardMaterial({map: netunoTexture})
-        const netuno = new THREE.Mesh(planetaGeometria, netunoMaterial)
-
-        scene.add(netuno)
-
-
-        //Animação (Para cada frame)
-        function animate() {
-            requestAnimationFrame(animate);
-            renderer.render(scene, camera);
-        }
-        animate();
+	<script type="module" src="script/netuno.js">
     </script>
 </body>
 </html>

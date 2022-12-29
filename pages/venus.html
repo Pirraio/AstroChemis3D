@@ -24,7 +24,7 @@
             <canvas class="webgl"></canvas>
             <h1>Informações</h1>
             <h2>Vênus</h2>
-            <p>É bastante parecido com a Terra em tamanho e densidade. A atmosfera de Vênus é extremamente densa e tóxica, repleta de dióxido de carbono e possuem nuvens com ácido sulfúrico. Sendo considerado o mais quente do sistema solar, nele quase se alcançam 500°C. Outro fato curioso é que todos os planetas giram no sentido anti-horário, exceto Vênus que gira no sentido horário.</p>
+            <p>É o segundo planeta do sistema solar e é bastante parecido com a Terra em tamanho e densidade. A atmosfera de Vênus é extremamente densa e tóxica, repleta de dióxido de carbono e possuem nuvens com ácido sulfúrico. Sendo considerado o mais quente do sistema solar, nele quase se alcançam 500°C, a razão para isso é que sua atmosfera é resposável por reter grande parte do calor. Um fato curioso é que Vênus rotaciona no sentido horário, contrariando a maioria dos planetas que giram no sentido anti-horário.</p>
             <h2>Propriedades</h2>
             <div class="propriedades-planetas">
                 <div class="dados">
@@ -37,7 +37,7 @@
                         <li>Período Orbital: 225 dias</li>
                         <li>Distância do sol: 0.7UA</li>
                         <li>Temperatura da superfície: 484°C</li>
-                        <li>Inclinação Orbital: 3.39°</li>
+                        <li>Inclinação Equatorial: 177,3°</li>
                         <li>Luas: 0</li>
                         <li>Tipo: Rochoso</li>
                         <li>Anéis: Não</li>
@@ -70,9 +70,9 @@
     </main>
         <footer> 
             <div id="logo_if">
-                <img src="../img/ifrn_logo.png" alt="IFRN Logo" class="footerimg">
+                <a href="https://portal.ifrn.edu.br"><img src="../img/ifrn_logo.png" alt="IFRN Logo" class="footerimg"></a>
             </div>
-            <div id="threejs_logo">Visualização 3D feita com: <br><img src="../img/threejs_logo.png" alt="ThreeJS Logo" class="footerimg"></div>
+            <div id="threejs_logo">Visualização 3D feita com: <br><a href="https://threejs.org"><img src="../img/threejs_logo.png" alt="ThreeJS Logo" class="footerimg"></a></div>
         </footer>
     <script type="importmap">
         {
@@ -82,71 +82,7 @@
             }
         }
     </script>
-	<script type="module">
-        import * as THREE from 'three'
-        import {OrbitControls} from 'OrbitControls'
-
-
-        //Inicializando a Cena, Câmera e o Renderer
-        const scene = new THREE.Scene();
-
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        camera.position.z = 3;
-
-        const canvas = document.querySelector("canvas.webgl")
-        const renderer = new THREE.WebGLRenderer({
-            canvas: canvas
-        })
-
-        const sizes = {
-            width: window.innerWidth*.8,
-            height: window.innerHeight*.8
-        }
-
-        renderer.setSize(sizes.width, sizes.height)
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-        // document.body.appendChild(renderer.domElement);
-
-
-        //Controle de Câmera
-        const controls = new OrbitControls(camera, renderer.domElement);
-
-        //Definindo Luzes 
-        // const pointLight = new THREE.DirectionalLight(0xffffff, .8)
-        const ambientLight = new THREE.AmbientLight(0xffffff, 1)
-        //  pointLight.position.set(5, 5, 4)
-        scene.add(ambientLight)
-
-        const skybox = new THREE.CubeTextureLoader();
-        const space = skybox.load([
-            '../img/skybox/px.png',
-            '../img/skybox/nx.png',
-            '../img/skybox/py.png',
-            '../img/skybox/ny.png',
-            '../img/skybox/pz.png',
-            '../img/skybox/nz.png'
-        ]);
-        scene.background = space;
-
-        //Definindo Objetos
-        const textureLoader = new THREE.TextureLoader();
-        const venusTexture = textureLoader.load( "../img/2k_venus_surface.jpg" );
-        const raio = 1
-        const segmentosX = 32
-        const segmentosY = 32
-        const planetaGeometria = new THREE.SphereGeometry(raio, segmentosX, segmentosY);
-        const venusMaterial = new THREE.MeshStandardMaterial({map: venusTexture})
-        const venus = new THREE.Mesh(planetaGeometria, venusMaterial)
-
-        scene.add(venus)
-
-
-        //Animação (Para cada frame)
-        function animate() {
-            requestAnimationFrame(animate);
-            renderer.render(scene, camera);
-        }
-        animate();
+	<script type="module" src="script/venus.js">
     </script>
 </body>
 </html>

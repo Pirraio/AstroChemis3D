@@ -24,26 +24,27 @@
             <canvas class="webgl"></canvas>
             <h1>Informações</h1>
             <h2>Júpiter</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae dolore voluptate optio dicta dignissimos atque aperiam voluptates consectetur similique sint accusamus voluptatum, nisi amet, harum doloribus voluptas illum nesciunt distinctio.</p>
+            <p>O maior e quinto planeta do sistema solar, esse gigante gasoso se destaca por seu imenso tamanho. Apresenta uma região conhecida como "A grande mancha vermelha", onde se encontra um enorme tempestade que daqui a alguns anos deixará de existir. Possui uma enorme quantidade de luas, com mais de 75 catalogadas, a maior sendo Ganimedes. Seu diâmetro é tão grande que caberia aproximadamente 11 planetas Terra em fila. Embora não aparente, possui anéis que são difícies de enxergar que foram descobertos pela sonda Voyager 1.</p>
+            <h2>Propriedades</h2>
+            <div class="propriedades-planetas">
+                <div class="dados">
+                    <ul>
+                        <li>Massa: 1.9 x 10<sup>27</sup> kg</li>
+                        <li>Volume: 1.4 x 10<sup>15</sup> km³</li>
+                        <li>Raio: 69.911 km</li>
+                        <li>Gravidade: 24.79 m/s²</li>
+                        <li>Tempo de Rotação: 11 dias</li>
+                        <li>Período Orbital: 47 anos</li>
+                        <li>Distância do sol: 5.2UA</li>
+                        <li>Temperatura da superfície: -110°C</li>
+                        <li>Inclinação Equatorial: 47°</li>
+                        <li>Luas: 80</li>
+                        <li>Tipo: Gasoso</li>
+                        <li>Anéis: Sim</li>
+                    </ul>
+                </div>
             <h2>Principais elementos químicos na atmosfera</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui sunt perspiciatis recusandae quod nihil sequi, maiores quas? Officiis, vero quam. Molestias fuga maiores dolorem enim impedit assumenda eius exercitationem adipisci?</p>
-        <h2>Propriedades</h2>
-        <div class="propriedades-planetas">
-            <div class="dados">
-                <ul>
-                    <li>Massa: </li>
-                    <li>Volume: </li>
-                    <li>Raio: 69911 km</li>
-                    <li>Gravidade: 24.79 m/s²</li>
-                    <li>Tempo de Rotação: 11 dias</li>
-                    <li>Período Orbital: 47 anos</li>
-                    <li>Distância do sol: 5.2UA</li>
-                    <li>Temperatura da superfície: </li>
-                    <li>Luas:</li>
-                    <li>Tipo: </li>
-                    <li>Anéis: </li>
-                </ul>
-            </div>
+        <p>As listras e os redemoinhos característicos de Júpiter são nuvens espalhadas na atmosfera em que há presença Hélio e Hidrogênio.</p>
         </div>
         <div class="elements-box">
             <a href="he.html">
@@ -63,9 +64,9 @@
     </main>
     <footer> 
         <div id="logo_if">
-            <img src="img/ifrn_logo.png" alt="IFRN Logo" class="footerimg">
+            <a href="https://portal.ifrn.edu.br"><img src="../img/ifrn_logo.png" alt="IFRN Logo" class="footerimg"></a>
         </div>
-        <div id="threejs_logo">Visualização 3D feita com: <br><img src="img/threejs_logo.png" alt="ThreeJS Logo" class="footerimg"></div>
+        <div id="threejs_logo">Visualização 3D feita com: <br><a href="https://threejs.org"><img src="../img/threejs_logo.png" alt="ThreeJS Logo" class="footerimg"></a></div>
     </footer>
     <script type="importmap">
         {
@@ -75,71 +76,7 @@
             }
         }
     </script>
-	<script type="module">
-        import * as THREE from 'three'
-        import {OrbitControls} from 'OrbitControls'
-
-
-        //Inicializando a Cena, Câmera e o Renderer
-        const scene = new THREE.Scene();
-
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        camera.position.z = 3;
-
-        const canvas = document.querySelector("canvas.webgl")
-        const renderer = new THREE.WebGLRenderer({
-            canvas: canvas
-        })
-
-        const sizes = {
-            width: window.innerWidth*.8,
-            height: window.innerHeight*.8
-        }
-
-        renderer.setSize(sizes.width, sizes.height)
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-        // document.body.appendChild(renderer.domElement);
-
-
-        //Controle de Câmera
-        const controls = new OrbitControls(camera, renderer.domElement);
-
-        //Definindo Luzes 
-        // const pointLight = new THREE.DirectionalLight(0xffffff, .8)
-        const ambientLight = new THREE.AmbientLight(0xffffff, 1)
-        //  pointLight.position.set(5, 5, 4)
-        scene.add(ambientLight)
-
-        const skybox = new THREE.CubeTextureLoader();
-        const space = skybox.load([
-            '../img/skybox/px.png',
-            '../img/skybox/nx.png',
-            '../img/skybox/py.png',
-            '../img/skybox/ny.png',
-            '../img/skybox/pz.png',
-            '../img/skybox/nz.png'
-        ]);
-        scene.background = space;
-
-        //Definindo Objetos
-        const textureLoader = new THREE.TextureLoader();
-        const jupiterTexture = textureLoader.load( "../img/2k_jupiter.jpg" );
-        const raio = 1
-        const segmentosX = 32
-        const segmentosY = 32
-        const planetaGeometria = new THREE.SphereGeometry(raio, segmentosX, segmentosY);
-        const jupiterMaterial = new THREE.MeshStandardMaterial({map: jupiterTexture})
-        const jupiter = new THREE.Mesh(planetaGeometria, jupiterMaterial)
-
-        scene.add(jupiter)
-
-
-        //Animação (Para cada frame)
-        function animate() {
-            requestAnimationFrame(animate);
-            renderer.render(scene, camera);
-        }
-        animate();
+	<script type="module" src="script/jupiter.js">
     </script>
 </body>
 </html>

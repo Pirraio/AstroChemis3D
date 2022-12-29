@@ -24,7 +24,7 @@
             <canvas class="webgl"></canvas>
             <h1>Informações</h1>
             <h2>Sol</h2>
-            <p>O sol é a estrela do nosso sistema solar, nela orbitam 8 planetas, incluindo o planeta Terra. A temperatura da sua superfície é por volta de 5778 K e ao contrário do que se pode pensar, o sol não está em combustão. Na verdade o que ocorre é um reação de fusão nuclear entre moléculas de hidrogênio que formam moléculas de hélio, liberando uma imensa quantidade de energia e isso ocasiona uma variação no campo eletromagnético acarretando em tempestades solares aqui na Terra. Essas tempestades podem chegar a afetar a comunicação sem fio e até mesmo destruir satélites. Também é responsável pela criação da aurora boreal e austral nos polos da Terra.</p>
+            <p>O sol é a estrela do nosso sistema solar, nela orbitam 8 planetas, incluindo o planeta Terra. A temperatura da sua superfície é por volta de 5778 K e ao contrário do que se pode pensar, o sol não está em combustão. Na verdade o que ocorre é um reação de fusão nuclear entre moléculas de hidrogênio que formam moléculas de hélio, liberando uma imensa quantidade de energia, isso ocasiona uma variação no campo eletromagnético ocasionando em tempestades solares aqui na Terra. Essas tempestades podem chegar a afetar a comunicação sem fio e até mesmo destruir satélites, porém também é responsável pela criação da aurora boreal e austral nos polos da Terra.</p>
             <h2>Propriedades</h2>
             <div class="propriedades-planetas">
             <div class="dados">
@@ -33,12 +33,12 @@
                     <li>Volume: 1,412 x 10<sup>18</sup> km³</li>
                     <li>Raio: 696.340 km</li>
                     <li>Gravidade: 274 m/s²</li>
-                    <li>Temperatura da superfície: 5.778 K</li>
+                    <li>Temperatura da superfície: 5.502 °C</li>
                 </ul>
             </div>
         </div>
             <h2>Principais elementos químicos</h2>
-        <p>Como já dito, no Sol ocorre a fusão nuclear em que moléculas de hidrogênio se chocam formando hélio, essas subtâncias podem ser visualizadas logo abaixo: </p>
+        <p>Como já dito, no Sol ocorre a fusão nuclear em que moléculas de hidrogênio se chocam formando hélio, liberando energia e gerando calor. </p>
         <div class="elements-box">
         <a href="he.html">
             <div class="box-wrapper">
@@ -56,9 +56,9 @@
     </main>
     <footer> 
         <div id="logo_if">
-            <img src="../img/ifrn_logo.png" alt="IFRN Logo" class="footerimg">
+            <a href="https://portal.ifrn.edu.br"><img src="../img/ifrn_logo.png" alt="IFRN Logo" class="footerimg"></a>
         </div>
-        <div id="threejs_logo">Visualização 3D feita com: <br><img src="../img/threejs_logo.png" alt="ThreeJS Logo" class="footerimg"></div>
+        <div id="threejs_logo">Visualização 3D feita com: <br><a href="https://threejs.org"><img src="../img/threejs_logo.png" alt="ThreeJS Logo" class="footerimg"></a></div>
     </footer>
     <script type="importmap">
         {
@@ -68,70 +68,7 @@
             }
         }
     </script>
-	<script type="module">
-import * as THREE from 'three'
-import {OrbitControls} from 'OrbitControls'
-
-
-//Inicializando a Cena, Câmera e o Renderer
-const scene = new THREE.Scene();
-
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.z = 3;
-
-const canvas = document.querySelector("canvas.webgl")
-const renderer = new THREE.WebGLRenderer({
-    canvas: canvas
-})
-
-const sizes = {
-    width: window.innerWidth*0.8,
-    height: window.innerHeight*0.8
-}
-
-renderer.setSize(sizes.width, sizes.height)
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-// document.body.appendChild(renderer.domElement);
-
-
-//Controle de Câmera
-const controls = new OrbitControls(camera, renderer.domElement);
-
-//Definindo Luzes 
-//  const pointLight = new THREE.DirectionalLight(0x00ff00 , 10)
-const ambientLight = new THREE.AmbientLight(0xffffff, 1)
-//  pointLight.position.set(5, 5, 4)
-scene.add(ambientLight)
-
-const skybox = new THREE.CubeTextureLoader();
-  const space = skybox.load([
-    '../img/skybox/px.png',
-    '../img/skybox/nx.png',
-    '../img/skybox/py.png',
-    '../img/skybox/ny.png',
-    '../img/skybox/pz.png',
-    '../img/skybox/nz.png'
-  ]);
-  scene.background = space;
-
-//Definindo Objetos
-const textureLoader = new THREE.TextureLoader();
-const solTexture = textureLoader.load( "../img/2k_sun.jpg" );
-const raio = 1
-const segmentosX = 32 
-const segmentosY = 32
-const planetaGeometria = new THREE.SphereGeometry(raio, segmentosX, segmentosY);
-const solMaterial = new THREE.MeshStandardMaterial({map: solTexture})
-const sol = new THREE.Mesh(planetaGeometria, solMaterial)
-scene.add(sol)
-
-
-//Animação (Para cada frame)
-function animate() {
-	requestAnimationFrame(animate);
-	renderer.render(scene, camera);
-}
-animate();
+	<script type="module" src="script/sol.js">
     </script>
 </body>
 </html>
