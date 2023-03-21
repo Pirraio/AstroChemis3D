@@ -15,6 +15,10 @@ body {
     height: 100vh;
 }
 
+canvas {
+    margin-left: 10px;
+}
+
 a {
     color: aliceblue;
 }
@@ -113,6 +117,10 @@ main h2 {
 
 .dados ul {
     list-style: none;
+}
+
+ li{
+    font-size: 18px;
 }
 
 .elements-box {
