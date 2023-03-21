@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 * {
+    font-size: 62.5%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,7 +10,9 @@
 
 body {
     background: #141A26;
-    color: white
+    color: white;
+    width: 100vw;
+    height: 100vh;
 }
 
 a {
@@ -20,26 +23,26 @@ nav {
     border-bottom: 1px solid black;
     background-color: #5833A6;
     width: 100%;
-    height: 8rem;
+    padding: 10px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #logo_astrochemis3d {
-    width: 42rem;  
+    width: 30rem;
 }
 
 .logo {
-    float: left;
     display: flex;
     align-items: center;
 }
 
-.navbtn {
-    float: right;
-    font-size: 20px;
+.navbtn { 
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    gap: 3rem;
+    gap: 2rem;
     align-items: center;
     height: 100%;
     padding-right: 1rem;
@@ -48,40 +51,37 @@ nav {
 .navbtn a {
     padding: 1em;
     text-decoration: none;
+    font-size: 30px;
 }
 
 .navbtn a:hover {
     background-color: #8979D9;
 }
 
+
 main h1 {
     text-align: center;
-    padding: 1rem;
-    font-size: 54px;
+    font-size: clamp(18px, 25px + 2vw, 54px);
 }
 
 main h2 {
     text-indent: 3rem;
-    font-size: 32px;
+    font-size: clamp(16px, 20px + 2vw, 32px);
 }
 
-main p {
-    padding: 1rem;
-    
-}
 
 .content-box {
-    width: 80%;
+    width: clamp(500px, 50%, 900px);
+    margin: 20px auto;
+    padding: 10px 50px;
     border: 1px solid black;
-    margin: auto;
     background-color: #2E3D59;
     border-radius: .5rem;
     margin-bottom: 2rem;
-    font-size: 42px;  
 }
 
 .content-box p {
-    font-size: 24px;
+    font-size: clamp(12px, 15px + 2vw, 24px);
     text-indent: 3rem;
     text-align: justify;
     margin: .4em;
@@ -171,6 +171,7 @@ footer {
     height: 10rem;
     background-color: #0D0D0D;
 }
+
 .footerimg {
     width: 150px;
     display: flex;
