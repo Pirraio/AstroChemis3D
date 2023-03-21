@@ -13,8 +13,8 @@ const renderer = new THREE.WebGLRenderer({
 	canvas: canvas
 });
 const sizes = {
-    width: window.innerWidth*0.8,
-    height: window.innerHeight*0.8
+    width: window.innerWidth*0.4,
+    height: window.innerHeight*0.4
 }
 
 renderer.setSize(sizes.width, sizes.height)
@@ -32,6 +32,7 @@ scene.add(pointLight, ambientLight)
 const carbonoGeometria = new THREE.SphereGeometry(2, 32, 32);
 const carbonoMaterial = new THREE.MeshPhongMaterial({color: 0xff0000})
 const carbono = new THREE.Mesh(carbonoGeometria, carbonoMaterial)
+// carbono.position.set(1,1,1)
 scene.add(carbono)
 const hidrogenioGeometria = new THREE.SphereGeometry(1.5, 32, 32);
 const hidrogenioMaterial = new THREE.MeshPhongMaterial({color: 0x00aaff})
@@ -54,11 +55,14 @@ ligacao1.position.set(0, 2.5, 0)
 ligacao2.position.set(0,-0.84, 2.36)
 ligacao3.position.set(-2.04, -0.84, -1.18)
 ligacao4.position.set(2.04, -0.84, -1.18)
+
 ligacao2.rotateX(1.91)
 ligacao4.rotateX(1,91)
 ligacao4.rotateZ(1,57)
 ligacao3.rotateX(1)
 ligacao3.rotateZ(2.1)
+
+
 scene.add(ligacao1, ligacao2, ligacao3, ligacao4)
 
 

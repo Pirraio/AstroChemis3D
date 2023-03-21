@@ -14,8 +14,8 @@ import * as THREE from 'three'
         })
 
         const sizes = {
-            width: window.innerWidth*.8,
-            height: window.innerHeight*.8
+            width: window.innerWidth*0.4,
+            height: window.innerHeight*0.4
         }
 
         renderer.setSize(sizes.width, sizes.height)

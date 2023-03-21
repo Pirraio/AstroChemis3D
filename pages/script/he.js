@@ -11,8 +11,8 @@ const renderer = new THREE.WebGLRenderer({
 	canvas: canvas
 });
 const sizes = {
-    width: window.innerWidth*0.795,
-    height: window.innerHeight*0.8
+    width: window.innerWidth*0.4,
+    height: window.innerHeight*0.4
 }
 
 renderer.setSize(sizes.width, sizes.height)
